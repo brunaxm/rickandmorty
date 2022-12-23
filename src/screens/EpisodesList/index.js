@@ -42,6 +42,26 @@ export const EpisodesList = () => {
         handlePage();
     }, [queryEpisodes]);
 
+    const navigateToCharacters = (episode) => {
+        let query = '';
+
+        if (episode.characters.length > 0) {
+            episode.characters.forEach((element, index) => {
+                if (index > 0) {
+                    query += ',';
+                }
+                const url = element.split('character/');
+                console.log(url);
+                query += url[1];
+            });
+        }
+
+        navigate(`/characters/episode/${episode.name}`, { state: { 
+            queryCharacters: query, 
+            origin: 'episode' 
+        }});
+    };
+
     return (
         <div id='containerEpList'>
             <div className="headerEp">
@@ -80,7 +100,11 @@ export const EpisodesList = () => {
                                         <p className='episodeValue'>{episode.air_date}</p>
                                     </div>
                                 </div>
-                                <button className='buttonCharactersEpList' onClick={() => {}}>Characters</button>
+                                <button
+                                    className='buttonCharactersEpList'
+                                    onClick={() => navigateToCharacters(episode)}>
+                                    Characters
+                                </button>
                             </div>
                         )}
                     </div>
