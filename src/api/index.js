@@ -6,7 +6,7 @@ export const getAllCharacteres = (urlPage = null) => {
     if (urlPage) {
         return axios.get(urlPage);
     }
-    return axios.get(`${url}/characte`);
+    return axios.get(`${url}/character`);
 };
 
 export const getCharacteresFilters = (urlQuery = '') => {
