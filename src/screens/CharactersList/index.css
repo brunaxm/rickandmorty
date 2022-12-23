@@ -1,0 +1,42 @@
+#containerChList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    background: rgb(35,6,88);
+    background: radial-gradient(circle, rgba(35,6,88,1) 11%, rgba(29,5,83,1) 44%, rgba(8,2,48,1) 100%);
+}
+
+.buttonBackCh {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    top: 35px;
+    left: 35px;
+}
+
+.headerCh {
+    padding: 15px;
+}
+
+.titleCh {
+    color: white;
+    font-weight: 600;
+}
+
+#loaderChList {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#errorChList {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

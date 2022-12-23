@@ -1,0 +1,130 @@
+#containerEp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90.7vh;
+    margin-bottom: 40px;
+}
+
+.listEp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 10px;
+    width: calc(100% - 60px);
+}
+
+#loaderEp {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#errorEp {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#filtersEp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 78.5vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.filterInputEp {
+    width: 27%;
+    border-radius: 4px;
+    min-height: 32px;
+    border: 1px solid hsl(0, 0%, 80%);
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    margin-right: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.buttonSearchEp {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: calc(2px + 2vmin);
+}
+
+.cardEp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 26%;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.episodeName {
+    font-size: calc(6px + 2vmin);
+    text-align: center;
+    color: #AFFC41;
+    margin: 15px 0;
+}
+
+.episodeInfos {
+    width: 90%;
+}
+
+.episodeInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.episodeLabel {
+    font-size: calc(2vmin);
+    color: #DCDCDC;
+    margin: 0;
+}
+
+.episodeValue {
+    font-size: calc(2px + 2vmin);
+    color: white;
+    margin: 0;
+}
+
+.buttonCharactersEp {
+    padding: 8px 20px;
+    margin-top: 25px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: calc(2px + 2vmin);
+}
+
+.buttonPaginationEp {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: calc(2px + 2vmin);
+}

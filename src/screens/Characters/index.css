@@ -1,0 +1,147 @@
+#containerChar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90.7vh;
+    margin-bottom: 40px;
+}
+
+.listChar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 10px;
+    width: calc(100% - 60px);
+}
+
+#loaderChar {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#errorChar {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#filtersChar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 78.5vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.filterInputChar {
+    width: 24%;
+    border-radius: 4px;
+    min-height: 32px;
+    border: 1px solid hsl(0, 0%, 80%);
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.filterSelectChar {
+    width: 16%;
+}
+
+.buttonSearchChar {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: calc(2px + 2vmin);
+}
+
+.cardChar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 40%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.characterPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.characterName {
+    font-size: calc(6px + 2vmin);
+    color: #AFFC41;
+    margin: 0;
+}
+
+.characterInfos {
+    padding-right: 15px;
+}
+
+.characterInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.characterLabel {
+    font-size: calc(2vmin);
+    color: #DCDCDC;
+    margin: 0;
+}
+
+.characterValue {
+    font-size: calc(2px + 2vmin);
+    color: white;
+    margin: 0;
+}
+
+.characterLink {
+    font-size: calc(2px + 2vmin);
+}
+
+.buttonPaginationChar {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: calc(2px + 2vmin);
+}
+
+.contentCardRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonEpisodesChar {
+    padding: 8px 20px;
+    margin-top: 25px;
+    background-color: #7209B7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: calc(2px + 2vmin);
+}

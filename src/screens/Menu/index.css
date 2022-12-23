@@ -1,0 +1,26 @@
+#containerMenu {
+    display: flex;
+    flex-direction: column;
+    background: rgb(35,6,88);
+    background: radial-gradient(circle, rgba(35,6,88,1) 11%, rgba(29,5,83,1) 44%, rgba(8,2,48,1) 100%);
+}
+
+#menu {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+}
+
+#logoMenu {
+    height: 6vh;
+}
