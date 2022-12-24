@@ -9,12 +9,15 @@ import { getAllCharacteres, getCharacteresFilters } from '../../api';
 import { mountQuery } from '../../formatters';
 import './index.css';
 
+
+// Opções do campo selecionável de status.
 const optionsStatus = [
     { value: 'alive', label: 'Alive' },
     { value: 'dead', label: 'Dead' },
     { value: 'unknown', label: 'Unknown' },
 ];
 
+// Opções do campo selecionável de gênero.
 const optionsGender = [
     { value: 'female', label: 'Female' },
     { value: 'male', label: 'Male' },
@@ -22,12 +25,18 @@ const optionsGender = [
     { value: 'unknown', label: 'Unknown' },
 ];
 
+// Componente da lista principal de personagens.
 export const Characters = () => {
+    // Informações recebidas no resultado da requisição e armazenadas no estado.
+    // O estado characters guardará a lista de personagens quando for carregada.
     const [info, setInfo] = useState();
     const [characters, setCharacters] = useState([]);
+
+    // Estados que servirão para verificar se a chamada aos dados ainda está carregando ou deu erro.
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     
+    // Estados para armazenar os valores dos inputs/selects presentes na parte de filtros.
     const [filterName, setFilterName] = useState('');
     const [filterSpecie, setFilterSpecie] = useState('');
     const [filterStatus, setFilterStatus] = useState();
@@ -35,10 +44,14 @@ export const Characters = () => {
 
     const navigate = useNavigate();
 
+    // Quando a página for montada (acessada) chamará a função handlePage.
     useEffect(() => {
         handlePage();
     }, []);
 
+    // A função handlePage carregará os dados dos personagens (20 por vez, pois a API manda de forma paginada).
+    // A função recebe como parâmetro uma url quando for para carregar a página anterior ou a próxima.
+    // A função window.scrollTo() serve para scrollar a tela de volta ao topo da lista.
     const handlePage = async (url = null) => {
         try {
             setError(false);
@@ -58,6 +71,8 @@ export const Characters = () => {
         }
     };
 
+    // Função para carregar os personagens a partir de filtros.
+    // Armazena em um array todos os filtros possíveis e chama a mountQuery() para montar a query da forma que URL suporta.
     const handleSearch = async () => {
         const values = [
             { name: 'name', value: filterName },
@@ -65,9 +80,7 @@ export const Characters = () => {
             { name: 'status', value: filterStatus ? filterStatus.value : '' },
             { name: 'gender', value: filterGender ? filterGender.value : '' },
         ];
-
         const urlQuery = mountQuery(values);
-        console.log(urlQuery);
             
         try {
             setError(false);
@@ -75,7 +88,6 @@ export const Characters = () => {
             
             const response = await getCharacteresFilters(urlQuery !== '?' && urlQuery);
 
-            console.log(response);
             setInfo(response.data.info);
             setCharacters(response.data.results);
         } catch (error) {
@@ -85,6 +97,10 @@ export const Characters = () => {
         } 
     };
 
+    // Função para navegar para a lista de episódios que determinado personagem participou.
+    // Como o objeto character contém apenas a lista de URLs de todos os episódios, pegamos apenas os IDs dos episódios
+    // presentes nessas URLs e concatemos em uma única string para enviar para a rota de lista de episódios que fará apenas
+    // uma requisição a partir dessa string enviada, para listar todos os episódios que o personagem aparece.
     const navigateToEpisodes = (character) => {
         let query = '';
 
@@ -94,7 +110,6 @@ export const Characters = () => {
                     query += ',';
                 }
                 const url = element.split('episode/');
-                console.log(url);
                 query += url[1];
             });
         }
@@ -102,6 +117,7 @@ export const Characters = () => {
         navigate(`/episodes/user/${character.name}`, { state: { queryEpisodes: query }});
     };
 
+    // Renderiza os elementos visuais da tela.
     return (
         <div id='containerChar'>
             <div id="filtersChar">

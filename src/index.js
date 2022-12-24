@@ -5,6 +5,11 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { router } from './routes';
 
+
+// Aplicativos criados com React possui um único nó DOM raiz, que é o root.
+// Para renderizar os elementos em React é preciso passar o DOM para o createRoot e depois utilizar os elementos dentro do render.
+// O React.StrictMode é utilizado para informar possíveis problemas na aplicação.
+// O RouterProvider é um componente que possui todas as rotas da aplicação que são declaradas em routes/index.js.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

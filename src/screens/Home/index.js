@@ -3,6 +3,8 @@ import { TbFriends, TbWorld, TbDeviceTvOld } from "react-icons/tb";
 
 import './index.css';
 
+// Componente da tela Home, que renderizará três opções para o usuário: acessar a lista de personagens, 
+// a lista de localizações ou a lista de episódios.
 export const Home = () => {
     const navigate = useNavigate();
 

@@ -6,16 +6,28 @@ import { TbPlayerPlay, TbArrowBigLeft } from "react-icons/tb";
 import { getEpisodesFilters } from "../../api";
 import './index.css';
 
+// Componente de uma lista secundária de episódios.
 export const EpisodesList = () => {
     const navigate = useNavigate();
+
+     // Obtém o parâmetro name que está na rota
     const { name } = useParams();
+
+    // Obtém o objeto state que foi enviado como parâmetro ao navegar para essa tela, e o desestrutura logo abaixo.
     const {state} = useLocation();
     const { queryEpisodes } = state;
 
+    // O estado episodes guardará a lista de personagens quando for carregada.
     const [episodes, setEpisodes] = useState([]);
+
+    // Estados que servirão para verificar se a chamada aos dados ainda está carregando ou deu erro.
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
+    // A função handlePage carregará os dados dos episódios assim que a tela for montada (acessada).
+    // A função window.scrollTo() serve para scrollar a tela de volta ao topo da lista.
+    // É necessário fazer uma verificação da resposta da requisição pois se retornar apenas um episódio virá como objeto, e se
+    // retornar mais episódios virá como array. Para não gerar erro na renderização foi necessário transformar o objeto para array também.
     useEffect(() => {
         const handlePage = async () => {
             try {
@@ -42,6 +54,10 @@ export const EpisodesList = () => {
         handlePage();
     }, [queryEpisodes]);
 
+    // Função para navegar para a lista de personagens que participaram de determinado episódio.
+    // Como o objeto episode contém apenas a lista de URLs de todos os personagens, pegamos apenas os IDs dos personagens
+    // presentes nessas URLs e concatemos em uma única string para enviar para a rota de lista de personagens que fará apenas
+    // uma requisição a partir dessa string enviada, para listar todos os personagens que participam do episódio.
     const navigateToCharacters = (episode) => {
         let query = '';
 
@@ -51,7 +67,6 @@ export const EpisodesList = () => {
                     query += ',';
                 }
                 const url = element.split('character/');
-                console.log(url);
                 query += url[1];
             });
         }
@@ -62,6 +77,7 @@ export const EpisodesList = () => {
         }});
     };
 
+    // Renderiza os elementos visuais da tela.
     return (
         <div id='containerEpList'>
             <div className="headerEp">

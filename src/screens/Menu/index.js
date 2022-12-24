@@ -3,6 +3,8 @@ import { Outlet, NavLink } from "react-router-dom";
 import { TbFriends, TbWorld, TbDeviceTvOld } from "react-icons/tb";
 import logo from '../../assets/logo.png';
 
+// Componente de Menu que será renderizado junto as telas de listagens principais.
+// Através do componente de Menu podemos acessar três telas, a lista de personagens, de localizações e de episódios.
 export const Menu = () => {
 
     const activeStyle = {

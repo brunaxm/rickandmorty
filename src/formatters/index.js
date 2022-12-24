@@ -1,3 +1,4 @@
+// Função para montar o formato de query suportado pela URL, para quando a URL conter filtros.
 export const mountQuery = (values) => {
     let urlQuery = '?';
 
