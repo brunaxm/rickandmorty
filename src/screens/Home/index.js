@@ -37,7 +37,7 @@ export const Home = () => {
                     Episódios
                     </p>
                     <p className='descriptionCard'>
-                    Procure pelos episódios da série a partir da sua data de exibição.
+                    Procure pelos episódios da série e veja quais personagens participaram de cada episódio.
                     </p>
                 </button>
                 </div>
